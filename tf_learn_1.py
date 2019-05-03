@@ -24,6 +24,7 @@ plt.figure()
 plt.imshow(train_images[0])
 plt.colorbar()
 plt.grid(False)
+plt.show()
 
 train_images = train_images / 255.0
 
@@ -37,6 +38,7 @@ for i in range(25):
     plt.grid(False)
     plt.imshow(train_images[i], cmap=plt.cm.binary)
     plt.xlabel(class_names[train_labels[i]])
+    plt.show()
 
 model = keras.Sequential([
     keras.layers.Flatten(input_shape=(28, 28)),
@@ -65,6 +67,7 @@ def plot_image(i, predictions_array, true_label, img):
   plt.yticks([])
 
   plt.imshow(img, cmap=plt.cm.binary)
+  plt.show()
 
   predicted_label = np.argmax(predictions_array)
   if predicted_label == true_label:
